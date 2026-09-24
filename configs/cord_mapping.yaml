@@ -28,3 +28,4 @@ total.emoneyprice: PAYMENT_AMOUNT
 total.menuqty_cnt: null
 total.etc: null
 
+#Define la correspondencia entre las etiquetas originales de CORD y nuestro esquema canónico.∫

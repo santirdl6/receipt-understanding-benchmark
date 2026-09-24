@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "image_size": {"width": 1000, "height": 1500}
+  },
+  "valid_line": [
+    {
+      "category": "menu.nm",
+      "group_id": 1,
+      "sub_group_id": 0,
+      "row_id": 3,
+      "words": [
+        {
+          "text": "COFFEE",
+          "quad": {
+            "x1": {"x": 100, "y": 200},
+            "x2": {"x": 250, "y": 200},
+            "x3": {"x": 250, "y": 230},
+            "x4": {"x": 100, "y": 230}
+          }
+        }
+      ]
+    },
+    {
+      "category": "total.total_price",
+      "group_id": 0,
+      "row_id": 10,
+      "words": [
+        {
+          "text": "5.00",
+          "quad": {
+            "x1": {"x": 700, "y": 1200},
+            "x2": {"x": 850, "y": 1200},
+            "x3": {"x": 850, "y": 1240},
+            "x4": {"x": 700, "y": 1240}
+          }
+        }
+      ]
+    }
+  ],
+  "gt_parse": {"menu": [{"nm": "COFFEE"}], "total": {"total_price": "5.00"}}
+}
+

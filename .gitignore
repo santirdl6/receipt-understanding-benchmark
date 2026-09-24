@@ -1,0 +1,20 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.DS_Store
+.env
+
+# Datasets, model weights and experiment outputs never go to Git.
+data/
+datasets/
+models/
+checkpoints/
+predictions/
+reports/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+

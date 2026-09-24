@@ -1,0 +1,30 @@
+# CORD v2 category -> canonical label.
+# null means that the source annotation is preserved but not mapped.
+menu.nm: ITEM_DESCRIPTION
+menu.num: ITEM_CODE
+menu.unitprice: ITEM_UNIT_PRICE
+menu.cnt: ITEM_QUANTITY
+menu.discountprice: ITEM_DISCOUNT
+menu.price: ITEM_LINE_TOTAL
+menu.itemsubtotal: ITEM_LINE_TOTAL
+menu.vatyn: null
+menu.etc: null
+menu.sub_nm: ITEM_DESCRIPTION
+menu.sub_unitprice: ITEM_UNIT_PRICE
+menu.sub_cnt: ITEM_QUANTITY
+menu.sub_price: ITEM_LINE_TOTAL
+menu.sub_etc: null
+subtotal.subtotal_price: SUBTOTAL_AMOUNT
+subtotal.discount_price: DISCOUNT_AMOUNT
+subtotal.service_price: null
+subtotal.othersvc_price: null
+subtotal.tax_price: TAX_AMOUNT
+subtotal.etc: null
+total.total_price: TOTAL_AMOUNT
+total.cashprice: PAYMENT_AMOUNT
+total.changeprice: CHANGE_AMOUNT
+total.creditcardprice: PAYMENT_AMOUNT
+total.emoneyprice: PAYMENT_AMOUNT
+total.menuqty_cnt: null
+total.etc: null
+

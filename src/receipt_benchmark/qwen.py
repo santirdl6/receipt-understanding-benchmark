@@ -3,12 +3,13 @@
 from __future__ import annotations
 
 import json
+from collections.abc import Iterator
 from io import BytesIO
 from itertools import chain, islice
 from pathlib import Path
 from tempfile import NamedTemporaryFile
 from time import perf_counter
-from typing import TYPE_CHECKING, Any, Iterator, Literal
+from typing import TYPE_CHECKING, Any, Literal
 
 from receipt_benchmark.scoring import ReceiptExtraction, cord_reference, parse_prediction
 

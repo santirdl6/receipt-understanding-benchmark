@@ -8,13 +8,13 @@ Point = tuple[float, float]
 BBox = tuple[float, float, float, float]
 
 
-class ImageMetadata(BaseModel):
+class ImageMetadata(BaseModel): #Representa información de la imagen
     path: str | None = None
     width: int | None = Field(default=None, gt=0)
     height: int | None = Field(default=None, gt=0)
 
 
-class TextSpan(BaseModel):
+class TextSpan(BaseModel): #Representa una palabra detectada o anotada
     model_config = ConfigDict(extra="forbid")
 
     id: str
@@ -39,7 +39,7 @@ class TextSpan(BaseModel):
         return self
 
 
-class CanonicalDocument(BaseModel):
+class CanonicalDocument(BaseModel): #Representa un ticket completo
     model_config = ConfigDict(extra="forbid")
 
     schema_version: Literal["1.0"] = "1.0"

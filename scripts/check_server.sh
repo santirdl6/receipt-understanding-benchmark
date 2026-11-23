@@ -34,3 +34,4 @@ else
   echo "Directory does not exist yet"
 fi
 
+#Comprueba las características del servidor

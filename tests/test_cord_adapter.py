@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 FIXTURE = ROOT / "tests" / "fixtures" / "cord_sample.json"
 MAPPING = ROOT / "configs" / "cord_mapping.yaml"
 
-
+#Comprueba que la conversión de una anotación CORD a nuestro esquema canónico funciona correctamente y que se preservan los grupos de palabras
 def test_converts_valid_lines_and_preserves_groups() -> None:
     adapter = CordAdapter.from_yaml(MAPPING)
     record = json.loads(FIXTURE.read_text(encoding="utf-8"))
@@ -25,7 +25,7 @@ def test_converts_valid_lines_and_preserves_groups() -> None:
     assert result.spans[1].canonical_label == "TOTAL_AMOUNT"
     assert result.source_parse["total"]["total_price"] == "5.00"
 
-
+#Comprueba que se permite formato de anotación de CORD serializado por Hugging Face y que se puede convertir correctamente a nuestro esquema canónico
 def test_accepts_hugging_face_serialized_ground_truth() -> None:
     adapter = CordAdapter.from_yaml(MAPPING)
     annotation = json.loads(FIXTURE.read_text(encoding="utf-8"))
@@ -34,7 +34,7 @@ def test_accepts_hugging_face_serialized_ground_truth() -> None:
     )
     assert len(result.spans) == 2
 
-
+#Compruena que una anotación sin valid_line produce un error controlado
 def test_rejects_missing_valid_line() -> None:
     adapter = CordAdapter.from_yaml(MAPPING)
     with pytest.raises(CordAdapterError, match="valid_line"):

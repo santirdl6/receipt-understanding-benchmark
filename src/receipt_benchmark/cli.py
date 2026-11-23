@@ -12,6 +12,7 @@ from receipt_benchmark.adapters import CordAdapter
 
 app = typer.Typer(help="Receipt Understanding Benchmark utilities.")
 
+#Proporciona comandos para utilizar proyecto desde la terminal
 
 def _default_mapping() -> Path:
     return Path(__file__).resolve().parents[2] / "configs" / "cord_mapping.yaml"
@@ -27,7 +28,8 @@ def _read_json(path: Path) -> dict:
         raise typer.BadParameter("The input JSON must contain one object")
     return value
 
-
+#Inspecciona una anotación sin crear otro archivo
+#Sirve para saber cuantas palabras hay, cuantas están mapeadas y cuantas categorías hay
 @app.command("inspect-cord")
 def inspect_cord(
     annotation: Annotated[Path, typer.Argument(exists=True, dir_okay=False)],
@@ -44,7 +46,7 @@ def inspect_cord(
     for label, count in sorted(source_counts.items()):
         typer.echo(f"  {label}: {count}")
 
-
+#Convierte una anotación de CORD a nuestro esquema canónico y la guarda en un archivo JSON
 @app.command("convert-cord")
 def convert_cord(
     annotation: Annotated[Path, typer.Argument(exists=True, dir_okay=False)],

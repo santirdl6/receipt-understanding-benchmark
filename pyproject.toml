@@ -22,6 +22,15 @@ dev = [
   "ruff>=0.6,<1",
 ]
 
+qwen = [
+  "accelerate>=1.0,<2",
+  "Pillow>=10,<13",
+  "pyarrow>=16,<25",
+  "torch>=2.5,<3",
+  "torchvision>=0.20,<1",
+  "transformers>=4.57.1,<5",
+]
+
 [project.scripts]
 receipt-benchmark = "receipt_benchmark.cli:app"
 

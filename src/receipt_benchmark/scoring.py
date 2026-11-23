@@ -75,7 +75,9 @@ def _normalize(value: str | None, field: str) -> str | None:
     if field == "ITEM_QUANTITY":
         numeric = re.sub(r"\s*[x×]$", "", text)
     else:
-        numeric = re.sub(r"^(?:idr|rp\.?)\s*", "", text).replace(" ", "")
+        # Receipts can mark an explicit unit price with a leading @.
+        amount = text.removeprefix("@").lstrip() if field == "ITEM_UNIT_PRICE" else text
+        numeric = re.sub(r"^(?:idr|rp\.?)\s*", "", amount).replace(" ", "")
         # CORD uses both 75,000 and 75.000 for grouped rupiah amounts.
         if re.fullmatch(r"[+-]?\d{1,3}(?:[,\.]\d{3})+(?:[,\.]\d{1,2})?", numeric):
             integer, fraction = re.split(r"[,\.](?=\d+$)", numeric, maxsplit=1)
